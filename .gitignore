@@ -1,0 +1,76 @@
+# Rider
+.idea/
+*.sln.iml
+.idea_modules/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
+.idea/libraries
+.idea/*.iws
+.idea/.idea_modules
+.idea/.name
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/runConfigurations
+.idea/webResources.xml
+*.ipr
+*.iws
+*.iml
+
+# .NET i Visual Studio
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.sln.docstates
+.vs/
+
+# Dane publikacji i logi
+*.pdb
+*.cache
+*.log
+*.pidb
+*.svclog
+*.userprefs
+
+# Pliki tymczasowe i inne
+*.tmp
+*.temp
+*.tmproj
+*.swp
+*~
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Biblioteki zewnętrzne
+*.dll
+*.so
+*.dylib
+*.lib
+
+# Skanery statyczne
+coverage/
+*.coverage
+*.coveragexml
+*.cov
+*.gcov
+*.lcov
+*.lst
+*.sass-cache
+*.eslintcache
+node_modules/
+bower_components/
+
+# Pliki do testów
+TestResults/
+.trx
+*.testlog
