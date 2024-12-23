@@ -20,6 +20,13 @@ public class Program
             .WorksAsA("Developer")
             .Build();
         Console.WriteLine(person.ToString());
+
+        var car = CarBuilder
+            .Create()
+            .WithCarType(CarType.Sedan)
+            .WithWheelSize(16)
+            .Build();
+        Console.WriteLine(car.ToString());
     }
 }
 
