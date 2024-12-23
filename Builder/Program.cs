@@ -14,6 +14,12 @@ public class Program
             .AddChild("Li", "hello")
             .AddChild("Li", "world");
         Console.WriteLine(htmlBuilder.ToString());
+                
+        var person = Person.New
+            .Called("Sarah")
+            .WorksAsA("Developer")
+            .Build();
+        Console.WriteLine(person.ToString());
     }
 }
 
