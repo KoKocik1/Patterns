@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Builder.Builders;
+using Builder.Extensions;
 
 public class Program
 {
@@ -27,6 +28,12 @@ public class Program
             .WithWheelSize(16)
             .Build();
         Console.WriteLine(car.ToString());
+        
+        var student = new StudentBuilder()
+            .Called("John")
+            .StudyAt("University")
+            .Build();
+        Console.WriteLine(student.ToString());
     }
 }
 
