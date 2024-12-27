@@ -34,6 +34,15 @@ public class Program
             .StudyAt("University")
             .Build();
         Console.WriteLine(student.ToString());
+
+        Employee employee = new EmployeeBuilder()
+            .works.At("Company")
+            .AsA("Developer")
+            .Earning(10000)
+            .lives.At("City")
+            .In("Berlin")
+            .WithPostcode("12-345");
+        Console.WriteLine(employee.ToString());
     }
 }
 
