@@ -22,6 +22,7 @@ public class Program
             .Build();
         Console.WriteLine(person.ToString());
 
+        // force to specific order
         var car = CarBuilder
             .Create()
             .WithCarType(CarType.Sedan)
@@ -29,12 +30,14 @@ public class Program
             .Build();
         Console.WriteLine(car.ToString());
         
+        // sealed class, use extension method
         var student = new StudentBuilder()
             .Called("John")
             .StudyAt("University")
             .Build();
         Console.WriteLine(student.ToString());
 
+        // 2 level
         Employee employee = new EmployeeBuilder()
             .works.At("Company")
             .AsA("Developer")
