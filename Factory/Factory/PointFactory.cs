@@ -1,4 +1,6 @@
-namespace Factory.Model;
+using Factory.Model;
+
+namespace Factory.Factory;
 
 public static class PointFactory
 {
