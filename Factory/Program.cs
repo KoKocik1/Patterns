@@ -29,6 +29,11 @@ public class Program
         Console.WriteLine(magicTheme.Value.BgrColor);
         factory2.ReplaceTheme(false);
         Console.WriteLine(magicTheme.Value.BgrColor);
+        
+        // abstract factory
+        var mashine = new HotDrinkMashine();
+        var drink = mashine.MakeDrink(HotDrinkMashine.AvailableDrink.Tea, 100);
+        drink.Consume();
     }
 
 }
