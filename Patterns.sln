@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepCopy", "DeepCopy\DeepCopy.csproj", "{ED7B4FE5-B973-4ADA-8A13-E478C9FB61E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{7361621E-B825-4A59-AF81-0C8F8BB37AD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1C107E47-5F5A-4A28-B6EB-8D1A0D7DFF41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonTests", "SingletonTests\SingletonTests.csproj", "{590873FA-0AB6-49CE-863B-EDB51672618B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,11 +63,22 @@ Global
 		{ED7B4FE5-B973-4ADA-8A13-E478C9FB61E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED7B4FE5-B973-4ADA-8A13-E478C9FB61E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED7B4FE5-B973-4ADA-8A13-E478C9FB61E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7361621E-B825-4A59-AF81-0C8F8BB37AD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7361621E-B825-4A59-AF81-0C8F8BB37AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7361621E-B825-4A59-AF81-0C8F8BB37AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7361621E-B825-4A59-AF81-0C8F8BB37AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590873FA-0AB6-49CE-863B-EDB51672618B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590873FA-0AB6-49CE-863B-EDB51672618B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590873FA-0AB6-49CE-863B-EDB51672618B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590873FA-0AB6-49CE-863B-EDB51672618B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {402F928A-2D23-48C6-A032-E46F9BDAA375}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{590873FA-0AB6-49CE-863B-EDB51672618B} = {1C107E47-5F5A-4A28-B6EB-8D1A0D7DFF41}
 	EndGlobalSection
 EndGlobal
