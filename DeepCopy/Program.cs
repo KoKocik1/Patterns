@@ -1,10 +1,11 @@
 ﻿using DeepCopy.Model;
+using static System.Console;
 
 namespace DeepCopy
 {
-  public static class Program
+  public class Program
   {
-    static void Main()
+    public static void Main()
     {
       var john = new Employee();
       john.Names = new[] {"John", "Doe"};
@@ -18,6 +19,17 @@ namespace DeepCopy
       
       Console.WriteLine(john);
       Console.WriteLine(copy);
+      
+      // copy contructor
+      var johnStudent = new Student("John", new SchoolAddress("123 London Road", "London", "UK"));
+
+      //var chris = john;
+      var chrisStudent = new Student(johnStudent);
+
+      chrisStudent.Name = "Chris";
+      WriteLine(johnStudent);
+      WriteLine(chrisStudent);
     }
   }
+  
 }
