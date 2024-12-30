@@ -28,6 +28,14 @@ namespace Singleton
         WriteLine(ReferenceEquals(foo1, foo2));
         WriteLine(ReferenceEquals(foo1.Broker, foo2.Broker));
       }
+           
+      // MonoState
+      var ceo = new ChiefExecutiveOfficer();
+      ceo.Name = "Adam Smith";
+      ceo.Age = 55;
+
+      var ceo2 = new ChiefExecutiveOfficer();
+      WriteLine(ceo2);
     }
   }
 }
