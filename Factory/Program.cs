@@ -34,6 +34,10 @@ public class Program
         var mashine = new HotDrinkMashine();
         var drink = mashine.MakeDrink(HotDrinkMashine.AvailableDrink.Tea, 100);
         drink.Consume();
+
+        var mashine2 = new HotDrinkMashineRefleksion();
+        var drink2 = mashine2.MakeDrink();
+        drink2.Consume();
         
         var personFactory = new PersonFactory();
         var person = personFactory.CreatePerson("John");
