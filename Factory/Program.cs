@@ -6,11 +6,11 @@ public class Program
     public static async Task Main(string[] args)
     {
         // simple example
-        var point = PointFactory.NewPolarPoint(1.0, Math.PI / 2);
+        var point = Point.Factory.NewPolarPoint(1.0, Math.PI / 2);
         Console.WriteLine(point);
         
         // simple example
-        var point2 = PointFactory.NewCartesianPoint(1, 2);
+        var point2 = Point.Factory.NewCartesianPoint(1, 2);
         Console.WriteLine(point2);
         
         //async example
