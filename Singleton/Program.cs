@@ -49,6 +49,26 @@ namespace Singleton
       });
       Task.WaitAll(t1, t2);
     
+      //Ambient content
+      var house = new Building();
+
+      using (new BuildingContext(3000))
+      {
+        // ground floor h=3000;
+        house.Walls.Add(new Wall(new Point(0, 0), new Point(5000, 0) /*, e*/));
+        house.Walls.Add(new Wall(new Point(0, 0), new Point(0, 4000) /*, e*/));
+
+        // first floor h=3500;
+        using (new BuildingContext(3500))
+        {
+          house.Walls.Add(new Wall(new Point(0, 0), new Point(5000, 0) /*, e*/));
+          house.Walls.Add(new Wall(new Point(0, 0), new Point(0, 4000) /*, e*/));
+        }
+
+        // back to ground again h=3000;
+        house.Walls.Add(new Wall(new Point(5000, 0), new Point(5000, 4000) /*, e*/));
+      }
+      Console.WriteLine(house);
     }
   }
 }
