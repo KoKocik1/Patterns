@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Singleton.Database;
+using Singleton.Models;
 using Singleton.Tests;
 using Singleton.Utils;
 
@@ -34,4 +35,13 @@ public class SingletonTests
             rf.GetTotalPopulation(new[]{"alpha", "gamma"}),
             Is.EqualTo(4));
     }
+
+    [Test]
+    public void SingletonTesterTest()
+    {
+        var obj = new object();
+        Assert.That(SingletonTester.IsSingleton(() => obj), Is.True);
+        Assert.That(SingletonTester.IsSingleton(() => new object()), Is.False);
+    }
+
 }
