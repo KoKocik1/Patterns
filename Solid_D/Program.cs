@@ -25,6 +25,7 @@ public class Relationships : IRelationshipBrowser
 {
     private readonly List<(Person, Relationship, Person)> relations = new();
 
+    //it is not a good idea to expose the list of relations
     //public List<(Person, Relationship, Person)> Relations => relations;
     public IEnumerable<Person> FindAllChildrenOf(string name)
     {

@@ -14,10 +14,29 @@ internal class Program
 
     private static void Main(string[] args)
     {
+        // Adapter with cache to prevent multiple calculations
+        // Can draw only points, not lines
+        // Adapter change line to points
+        SimpleCacheAdapter();
+        
+        // Generic adapter for vectors and other types with other dimensions
+        // example for 2D integer vector and 3D float vector
+        GenericAdapter();
+        
+        // Adapter for dependency injection
+        // example with metadata
+        // example with button and command
+        DependencyInjectionAdapter();
+    }
+    private static void SimpleCacheAdapter()
+    {
         //example adapter
         DrawUtils.Draw(vectorObjects);
         DrawUtils.Draw(vectorObjects);
+    }
 
+    private static void GenericAdapter()
+    {
         // generic adapter
         var v = new Vector2i(1, 2);
         v[0] = 0;
@@ -27,7 +46,10 @@ internal class Program
         var result = v + vv;
 
         var vector3f = Vector3f.Create(2.2f, 3.3f, 4.4f);
-
+    }
+    
+    private static void DependencyInjectionAdapter()
+    {
         var b = new ContainerBuilder();
         b.RegisterType<SaveCommand>().As<ICommand>()
             .WithMetadata("Name", "Save");

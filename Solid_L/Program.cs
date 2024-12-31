@@ -7,6 +7,7 @@ public class Program
         return rc.Width * rc.Height;
     }
 
+    // use override to fix the issue
     public static void Main()
     {
         var rc = new Rectangle(2, 3);

@@ -7,6 +7,28 @@ public class Program
 {
     public static void Main()
     {
+        // own interface IDeepCopyable<T> with DeepCopy() method
+        // clear usage of DeepCopy() method
+        DeepCopyByOwnGenericInterface();
+
+        // using copy constructor
+        DeepCopyByCtor();
+    }
+
+    private static void DeepCopyByCtor()
+    {
+        var johnStudent = new Student("John", new SchoolAddress("123 London Road", "London", "UK"));
+
+        //var chris = john;
+        var chrisStudent = new Student(johnStudent);
+
+        chrisStudent.Name = "Chris";
+        WriteLine(johnStudent);
+        WriteLine(chrisStudent);
+    }
+
+    private static void DeepCopyByOwnGenericInterface()
+    {
         var john = new Employee();
         john.Names = new[] { "John", "Doe" };
         john.Address = new Address { HouseNumber = 123, StreetName = "London Road" };
@@ -19,15 +41,5 @@ public class Program
 
         WriteLine(john);
         WriteLine(copy);
-
-        // copy contructor
-        var johnStudent = new Student("John", new SchoolAddress("123 London Road", "London", "UK"));
-
-        //var chris = john;
-        var chrisStudent = new Student(johnStudent);
-
-        chrisStudent.Name = "Chris";
-        WriteLine(johnStudent);
-        WriteLine(chrisStudent);
     }
 }
