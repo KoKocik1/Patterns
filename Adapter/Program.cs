@@ -14,5 +14,12 @@ class Program
     {
         DrawUtils.Draw(vectorObjects);
         DrawUtils.Draw(vectorObjects);
+        
+        var v = new Vector2i(1,2);
+        v[0] = 0;
+        
+        var vv = new Vector2i(3,1);
+        
+        var result = v + vv;
     }
 }
