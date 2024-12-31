@@ -5,9 +5,9 @@ namespace Adapter.Adapter;
 
 public class LineToPointAdapter : IEnumerable<Point>
 {
-    private static int count = 0;
-    static Dictionary<int, List<Point>> cache = new Dictionary<int, List<Point>>();
-    private int hash;
+    private static int count;
+    private static readonly Dictionary<int, List<Point>> cache = new();
+    private readonly int hash;
 
     public LineToPointAdapter(Line line)
     {
@@ -17,29 +17,21 @@ public class LineToPointAdapter : IEnumerable<Point>
         Console.WriteLine(
             $"{++count}: Generating points for line [{line.Start.X},{line.Start.Y}]-[{line.End.X},{line.End.Y}] (with caching)");
 
-        List<Point> points = new List<Point>();
+        List<Point> points = new();
 
-        int left = Math.Min(line.Start.X, line.End.X);
-        int right = Math.Max(line.Start.X, line.End.X);
-        int top = Math.Min(line.Start.Y, line.End.Y);
-        int bottom = Math.Max(line.Start.Y, line.End.Y);
-        int dx = right - left;
-        int dy = line.End.Y - line.Start.Y;
+        var left = Math.Min(line.Start.X, line.End.X);
+        var right = Math.Max(line.Start.X, line.End.X);
+        var top = Math.Min(line.Start.Y, line.End.Y);
+        var bottom = Math.Max(line.Start.Y, line.End.Y);
+        var dx = right - left;
+        var dy = line.End.Y - line.Start.Y;
 
         if (dx == 0)
-        {
-            for (int y = top; y <= bottom; ++y)
-            {
+            for (var y = top; y <= bottom; ++y)
                 points.Add(new Point(left, y));
-            }
-        }
         else if (dy == 0)
-        {
-            for (int x = left; x <= right; ++x)
-            {
+            for (var x = left; x <= right; ++x)
                 points.Add(new Point(x, top));
-            }
-        }
 
         cache.Add(hash, points);
     }

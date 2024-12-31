@@ -6,11 +6,11 @@ public class HotDrinkMashine
 {
     public enum AvailableDrink
     {
-        Coffee, Tea
+        Coffee,
+        Tea
     }
-    
-    private Dictionary<AvailableDrink, IHotDrinkFactory> factories 
-        = new Dictionary<AvailableDrink, IHotDrinkFactory>();
+
+    private readonly Dictionary<AvailableDrink, IHotDrinkFactory> factories = new();
 
     public HotDrinkMashine()
     {
@@ -22,7 +22,7 @@ public class HotDrinkMashine
             factories.Add(drink, factory);
         }
     }
-    
+
     public IHotDrink MakeDrink(AvailableDrink drink, int amount)
     {
         return factories[drink].Prepare(amount);

@@ -2,13 +2,13 @@ namespace DeepCopy.Model;
 
 public class Student
 {
-    public string Name;
     public SchoolAddress Address;
+    public string Name;
 
     public Student(string name, SchoolAddress address)
     {
-        Name = name ?? throw new ArgumentNullException(paramName: nameof(name));
-        Address = address ?? throw new ArgumentNullException(paramName: nameof(address));
+        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Address = address ?? throw new ArgumentNullException(nameof(address));
     }
 
     public Student(Student other)

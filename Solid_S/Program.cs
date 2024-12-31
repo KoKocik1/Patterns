@@ -1,20 +1,25 @@
-﻿public class Journal{
-    private readonly List<string> entries = new List<string>();
-    private static int count = 0;
+﻿public class Journal
+{
+    private static int count;
+    private readonly List<string> entries = new();
 
-    public int AddEntry(string text){
+    public int AddEntry(string text)
+    {
         entries.Add($"{++count}: {text}");
         return count; // memento
     }
 
-    public void RemoveEntry(int index){
+    public void RemoveEntry(int index)
+    {
         entries.RemoveAt(index);
     }
 
-    public override string ToString(){
+    public override string ToString()
+    {
         return string.Join(Environment.NewLine, entries);
     }
 }
+
 public class Persistence
 {
     public void SaveToFile(Journal journal, string filename, bool overwrite = false)
@@ -24,8 +29,10 @@ public class Persistence
     }
 }
 
-public class Program{
-    public static void Main(string[] args){
+public class Program
+{
+    public static void Main(string[] args)
+    {
         var j = new Journal();
         j.AddEntry("I cried today.");
         j.AddEntry("I ate a bug.");

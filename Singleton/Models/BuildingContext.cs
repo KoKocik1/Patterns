@@ -2,10 +2,10 @@ namespace Singleton.Models;
 
 public sealed class BuildingContext : IDisposable
 {
-    public int WallHeight = 0;
+    private static readonly Stack<BuildingContext> stack = new();
+
+    public int WallHeight;
     public int WallThickness = 300; // etc.
-    private static Stack<BuildingContext> stack 
-        = new Stack<BuildingContext>();
 
     static BuildingContext()
     {

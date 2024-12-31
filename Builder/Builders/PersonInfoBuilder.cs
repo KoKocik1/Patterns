@@ -6,6 +6,6 @@ public class PersonInfoBuilder<SELF> : PersonBuilder
     public SELF Called(string name)
     {
         person.Name = name;
-        return (SELF) this;
+        return (SELF)this;
     }
 }

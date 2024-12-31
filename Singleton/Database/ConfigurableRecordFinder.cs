@@ -4,7 +4,7 @@ namespace Singleton.Database;
 
 public class ConfigurableRecordFinder
 {
-    private IDatabase database;
+    private readonly IDatabase database;
 
     public ConfigurableRecordFinder(IDatabase database)
     {
@@ -13,7 +13,7 @@ public class ConfigurableRecordFinder
 
     public int GetTotalPopulation(IEnumerable<string> names)
     {
-        int result = 0;
+        var result = 0;
         foreach (var name in names)
             result += database.GetPopulation(name);
         return result;

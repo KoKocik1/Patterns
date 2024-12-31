@@ -21,27 +21,7 @@ public class Vector<TSelf, T, D>
         var providedLength = values.Length;
         var actLength = Math.Min(requiredLength, providedLength);
 
-        for (int i = 0; i < actLength; i++)
-        {
-            data[i] = values[i];
-        }
-    }
-
-    public static TSelf Create(params T[] values)
-    {
-        var result = new TSelf();
-        var requiredLength = new D().Value;
-        result.data = new T[requiredLength];
-
-        var providedLength = values.Length;
-        var actLength = Math.Min(requiredLength, providedLength);
-
-        for (int i = 0; i < actLength; i++)
-        {
-            result.data[i] = values[i];
-        }
-
-        return result;
+        for (var i = 0; i < actLength; i++) data[i] = values[i];
     }
 
     public T this[int index]
@@ -54,5 +34,19 @@ public class Vector<TSelf, T, D>
     {
         get => data[0];
         set => data[0] = value;
+    }
+
+    public static TSelf Create(params T[] values)
+    {
+        var result = new TSelf();
+        var requiredLength = new D().Value;
+        result.data = new T[requiredLength];
+
+        var providedLength = values.Length;
+        var actLength = Math.Min(requiredLength, providedLength);
+
+        for (var i = 0; i < actLength; i++) result.data[i] = values[i];
+
+        return result;
     }
 }

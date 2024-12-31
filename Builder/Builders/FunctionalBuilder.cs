@@ -4,10 +4,12 @@ public abstract class FunctionalBuilder<TSubject, TSelf>
     where TSelf : FunctionalBuilder<TSubject, TSelf>
     where TSubject : new()
 {
-    private readonly List<Func<TSubject, TSubject>> actions
-        = new List<Func<TSubject, TSubject>>();
+    private readonly List<Func<TSubject, TSubject>> actions = new();
 
-    public TSelf Do(Action<TSubject> action) => AddAction(action);
+    public TSelf Do(Action<TSubject> action)
+    {
+        return AddAction(action);
+    }
 
     private TSelf AddAction(Action<TSubject> action)
     {
@@ -16,8 +18,11 @@ public abstract class FunctionalBuilder<TSubject, TSelf>
             action(p);
             return p;
         });
-        return (TSelf) this;
+        return (TSelf)this;
     }
 
-    public TSubject Build() => actions.Aggregate(new TSubject(), (p, f) => f(p));
+    public TSubject Build()
+    {
+        return actions.Aggregate(new TSubject(), (p, f) => f(p));
+    }
 }

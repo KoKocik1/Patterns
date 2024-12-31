@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace Builder.Builders;
 
 // public sealed class StudentBuilder
@@ -24,5 +22,8 @@ namespace Builder.Builders;
 
 public sealed class StudentBuilder : FunctionalBuilder<Student, StudentBuilder>
 {
-    public StudentBuilder Called(string name) => Do(p => p.Name = name);
+    public StudentBuilder Called(string name)
+    {
+        return Do(p => p.Name = name);
+    }
 }

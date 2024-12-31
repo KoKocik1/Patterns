@@ -14,20 +14,16 @@ public class Person
         Name = name;
     }
 }
+
 public interface IRelationshipBrowser
 {
     IEnumerable<Person> FindAllChildrenOf(string name);
 }
+
 //low-level
 public class Relationships : IRelationshipBrowser
 {
-    private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
-
-    public void AddParentAndChild(Person parent, Person child)
-    {
-        relations.Add((parent, Relationship.Parent, child));
-        relations.Add((child, Relationship.Child, parent));
-    }
+    private readonly List<(Person, Relationship, Person)> relations = new();
 
     //public List<(Person, Relationship, Person)> Relations => relations;
     public IEnumerable<Person> FindAllChildrenOf(string name)
@@ -35,7 +31,13 @@ public class Relationships : IRelationshipBrowser
         return relations.Where(
             x => x.Item1.Name == name &&
                  x.Item2 == Relationship.Parent
-        ).Select(r=>r.Item3);
+        ).Select(r => r.Item3);
+    }
+
+    public void AddParentAndChild(Person parent, Person child)
+    {
+        relations.Add((parent, Relationship.Parent, child));
+        relations.Add((child, Relationship.Child, parent));
     }
 }
 
@@ -56,12 +58,10 @@ public class Research
 
     public Research(IRelationshipBrowser browser)
     {
-        foreach (var p in browser.FindAllChildrenOf("John"))
-        {
-            Console.WriteLine($"John has a child called {p.Name}");
-        }
+        foreach (var p in browser.FindAllChildrenOf("John")) Console.WriteLine($"John has a child called {p.Name}");
     }
-    static void Main()
+
+    private static void Main()
     {
         var parent = new Person("John");
         var child1 = new Person("Chris");
@@ -74,4 +74,3 @@ public class Research
         new Research(relationships);
     }
 }
-

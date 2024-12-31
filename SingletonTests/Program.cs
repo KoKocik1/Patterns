@@ -21,8 +21,8 @@ public class SingletonTests
     {
         // testing on a live database
         var rf = new SingletonRecordFinder();
-        var names = new[] {"Seoul", "Mexico City"};
-        int tp = rf.TotalPopulation(names);
+        var names = new[] { "Seoul", "Mexico City" };
+        var tp = rf.TotalPopulation(names);
         Assert.That(tp, Is.EqualTo(17500000 + 17400000));
     }
 
@@ -32,7 +32,7 @@ public class SingletonTests
         var db = new DummyDatabase();
         var rf = new ConfigurableRecordFinder(db);
         Assert.That(
-            rf.GetTotalPopulation(new[]{"alpha", "gamma"}),
+            rf.GetTotalPopulation(new[] { "alpha", "gamma" }),
             Is.EqualTo(4));
     }
 
@@ -43,5 +43,4 @@ public class SingletonTests
         Assert.That(SingletonTester.IsSingleton(() => obj), Is.True);
         Assert.That(SingletonTester.IsSingleton(() => new object()), Is.False);
     }
-
 }

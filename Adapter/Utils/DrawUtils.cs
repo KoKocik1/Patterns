@@ -15,12 +15,10 @@ public static class DrawUtils
     public static void Draw(List<VectorObject> vectorObjects)
     {
         foreach (var vo in vectorObjects)
+        foreach (var line in vo)
         {
-            foreach (var line in vo)
-            {
-                var adapter = new LineToPointAdapter(line);
-                adapter.ForEach(DrawPoint);
-            }
+            var adapter = new LineToPointAdapter(line);
+            adapter.ForEach(DrawPoint);
         }
     }
 }

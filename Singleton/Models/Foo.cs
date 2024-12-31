@@ -6,6 +6,6 @@ public class Foo
 
     public Foo(EventBroker broker)
     {
-        Broker = broker ?? throw new ArgumentNullException(paramName: nameof(broker));
+        Broker = broker ?? throw new ArgumentNullException(nameof(broker));
     }
 }

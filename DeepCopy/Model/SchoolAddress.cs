@@ -6,9 +6,9 @@ public class SchoolAddress
 
     public SchoolAddress(string streetAddress, string city, string country)
     {
-        StreetAddress = streetAddress ?? throw new ArgumentNullException(paramName: nameof(streetAddress));
-        City = city ?? throw new ArgumentNullException(paramName: nameof(city));
-        Country = country ?? throw new ArgumentNullException(paramName: nameof(country));
+        StreetAddress = streetAddress ?? throw new ArgumentNullException(nameof(streetAddress));
+        City = city ?? throw new ArgumentNullException(nameof(city));
+        Country = country ?? throw new ArgumentNullException(nameof(country));
     }
 
     public SchoolAddress(SchoolAddress other)

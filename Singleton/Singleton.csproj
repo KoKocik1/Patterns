@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="8.2.0" />
-      <PackageReference Include="morelinq" Version="4.3.0" />
+        <PackageReference Include="Autofac" Version="8.2.0"/>
+        <PackageReference Include="morelinq" Version="4.3.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Files\capitals.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+        <None Update="Files\capitals.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>

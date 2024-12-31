@@ -4,8 +4,8 @@ namespace DeepCopy.Model;
 
 public class Address : IDeepCopyable<Address>
 {
-    public string StreetName;
     public int HouseNumber;
+    public string StreetName;
 
     public Address(string streetName, int houseNumber)
     {
@@ -15,17 +15,16 @@ public class Address : IDeepCopyable<Address>
 
     public Address()
     {
-      
-    }
-
-    public override string ToString()
-    {
-        return $"{nameof(StreetName)}: {StreetName}, {nameof(HouseNumber)}: {HouseNumber}";
     }
 
     public void CopyTo(Address target)
     {
         target.StreetName = StreetName;
         target.HouseNumber = HouseNumber;
+    }
+
+    public override string ToString()
+    {
+        return $"{nameof(StreetName)}: {StreetName}, {nameof(HouseNumber)}: {HouseNumber}";
     }
 }

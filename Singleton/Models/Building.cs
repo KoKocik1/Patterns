@@ -1,9 +1,10 @@
 using System.Text;
 
 namespace Singleton.Models;
+
 public class Building
 {
-    public readonly List<Wall> Walls = new List<Wall>();
+    public readonly List<Wall> Walls = new();
 
     public override string ToString()
     {

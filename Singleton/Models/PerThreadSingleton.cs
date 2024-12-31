@@ -2,12 +2,12 @@ namespace Singleton.Models;
 
 public sealed class PerThreadSingleton
 {
-    private static ThreadLocal<PerThreadSingleton> threadInstance
-        = new ThreadLocal<PerThreadSingleton>(
+    private static readonly ThreadLocal<PerThreadSingleton> threadInstance
+        = new(
             () => new PerThreadSingleton());
 
     public int Id;
-    
+
     private PerThreadSingleton()
     {
         Id = Thread.CurrentThread.ManagedThreadId;

@@ -10,13 +10,9 @@ public static class HtmlCreate
         var words = new[] { "hello", "world" };
         sb.Clear();
         sb.AppendLine("<ul>");
-        foreach (var word in words)
-        {
-            sb.AppendLine($"  <li>{word}</li>");
-        }
+        foreach (var word in words) sb.AppendLine($"  <li>{word}</li>");
 
         sb.AppendLine("</ul>");
         Console.WriteLine(sb);
     }
-
 }

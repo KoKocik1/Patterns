@@ -3,11 +3,18 @@ namespace Factory.Model;
 public class Point
 {
     private double x, y;
+
     private Point(double x, double y)
     {
         this.x = x;
         this.y = y;
     }
+
+    public override string ToString()
+    {
+        return $"{nameof(x)}: {x.ToString("0.00")}, {nameof(y)}: {y.ToString("0.00")}";
+    }
+
     public static class Factory
     {
         public static Point NewCartesianPoint(double x, double y)
@@ -19,9 +26,5 @@ public class Point
         {
             return new Point(rho * Math.Cos(theta), rho * Math.Sin(theta));
         }
-    }
-    public override string ToString()
-    {
-        return $"{nameof(x)}: {x.ToString("0.00")}, {nameof(y)}: {y.ToString("0.00")}";
     }
 }

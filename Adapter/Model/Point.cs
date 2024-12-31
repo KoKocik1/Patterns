@@ -7,8 +7,8 @@ public class Point
 
     public Point(int x, int y)
     {
-        this.X = x;
-        this.Y = y;
+        X = x;
+        Y = y;
     }
 
     protected bool Equals(Point other)
@@ -20,7 +20,7 @@ public class Point
     {
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
-        if (obj.GetType() != this.GetType()) return false;
+        if (obj.GetType() != GetType()) return false;
         return Equals((Point)obj);
     }
 

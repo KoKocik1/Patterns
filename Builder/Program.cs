@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Builder.Builders;
+﻿using Builder.Builders;
 using Builder.Extensions;
 
 public class Program
@@ -10,12 +9,12 @@ public class Program
             .AddField("Name", "string")
             .AddField("Age", "int");
         Console.WriteLine(cb);
-        
+
         var htmlBuilder = new HtmlBuilder("Ul")
             .AddChild("Li", "hello")
             .AddChild("Li", "world");
         Console.WriteLine(htmlBuilder.ToString());
-                
+
         var person = Person.New
             .Called("Sarah")
             .WorksAsA("Developer")
@@ -29,7 +28,7 @@ public class Program
             .WithWheelSize(16)
             .Build();
         Console.WriteLine(car.ToString());
-        
+
         // sealed class, use extension method
         var student = new StudentBuilder()
             .Called("John")
@@ -48,4 +47,3 @@ public class Program
         Console.WriteLine(employee.ToString());
     }
 }
-

@@ -2,13 +2,13 @@ namespace Adapter.Model;
 
 public class Line
 {
-    public Point Start;
     public Point End;
+    public Point Start;
 
     public Line(Point start, Point end)
     {
-        this.Start = start;
-        this.End = end;
+        Start = start;
+        End = end;
     }
 
     protected bool Equals(Line other)
@@ -20,7 +20,7 @@ public class Line
     {
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
-        if (obj.GetType() != this.GetType()) return false;
+        if (obj.GetType() != GetType()) return false;
         return Equals((Line)obj);
     }
 

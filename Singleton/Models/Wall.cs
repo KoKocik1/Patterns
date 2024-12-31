@@ -2,10 +2,9 @@ namespace Singleton.Models;
 
 public class Wall
 {
-    public Point Start, End;
+    public const int UseAmbient = int.MinValue;
     public int Height;
-    
-    public const int UseAmbient = Int32.MinValue;
+    public Point Start, End;
 
     // public Wall(Point start, Point end, int elevation = UseAmbient)
     // {

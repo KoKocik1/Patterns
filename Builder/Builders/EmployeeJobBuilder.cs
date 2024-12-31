@@ -6,7 +6,7 @@ public class EmployeeJobBuilder : EmployeeBuilder
     {
         this.employee = employee;
     }
-    
+
     public EmployeeJobBuilder At(string companyName)
     {
         employee.CompanyName = companyName;

@@ -17,10 +17,7 @@ public class VectorOfInt<TSelf, D> : Vector<TSelf, int, D>
     public static VectorOfInt<TSelf, D> operator +(VectorOfInt<TSelf, D> v1, VectorOfInt<TSelf, D> v2)
     {
         var result = new VectorOfInt<TSelf, D>();
-        for (int i = 0; i < new D().Value; i++)
-        {
-            result[i] = v1[i] + v2[i];
-        }
+        for (var i = 0; i < new D().Value; i++) result[i] = v1[i] + v2[i];
 
         return result;
     }

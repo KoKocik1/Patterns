@@ -1,35 +1,33 @@
 ﻿using DeepCopy.Model;
 using static System.Console;
 
-namespace DeepCopy
+namespace DeepCopy;
+
+public class Program
 {
-  public class Program
-  {
     public static void Main()
     {
-      var john = new Employee();
-      john.Names = new[] {"John", "Doe"};
-      john.Address = new Address {HouseNumber = 123, StreetName = "London Road"};
-      john.Salary = 321000;
-      var copy = john.DeepCopy();
+        var john = new Employee();
+        john.Names = new[] { "John", "Doe" };
+        john.Address = new Address { HouseNumber = 123, StreetName = "London Road" };
+        john.Salary = 321000;
+        var copy = john.DeepCopy();
 
-      copy.Names[1] = "Smith";
-      copy.Address.HouseNumber++;
-      copy.Salary = 123000;
-      
-      Console.WriteLine(john);
-      Console.WriteLine(copy);
-      
-      // copy contructor
-      var johnStudent = new Student("John", new SchoolAddress("123 London Road", "London", "UK"));
+        copy.Names[1] = "Smith";
+        copy.Address.HouseNumber++;
+        copy.Salary = 123000;
 
-      //var chris = john;
-      var chrisStudent = new Student(johnStudent);
+        WriteLine(john);
+        WriteLine(copy);
 
-      chrisStudent.Name = "Chris";
-      WriteLine(johnStudent);
-      WriteLine(chrisStudent);
+        // copy contructor
+        var johnStudent = new Student("John", new SchoolAddress("123 London Road", "London", "UK"));
+
+        //var chris = john;
+        var chrisStudent = new Student(johnStudent);
+
+        chrisStudent.Name = "Chris";
+        WriteLine(johnStudent);
+        WriteLine(chrisStudent);
     }
-  }
-  
 }
