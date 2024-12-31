@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1C107E47
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonTests", "SingletonTests\SingletonTests.csproj", "{590873FA-0AB6-49CE-863B-EDB51672618B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{49589D3A-6F41-4FDA-BE99-FE17E485EBB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{590873FA-0AB6-49CE-863B-EDB51672618B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{590873FA-0AB6-49CE-863B-EDB51672618B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{590873FA-0AB6-49CE-863B-EDB51672618B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49589D3A-6F41-4FDA-BE99-FE17E485EBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49589D3A-6F41-4FDA-BE99-FE17E485EBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49589D3A-6F41-4FDA-BE99-FE17E485EBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49589D3A-6F41-4FDA-BE99-FE17E485EBB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
