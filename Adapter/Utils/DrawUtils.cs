@@ -11,6 +11,7 @@ public static class DrawUtils
     {
         Console.Write(".");
     }
+
     public static void Draw(List<VectorObject> vectorObjects)
     {
         foreach (var vo in vectorObjects)
@@ -22,5 +23,4 @@ public static class DrawUtils
             }
         }
     }
-
 }

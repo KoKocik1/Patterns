@@ -2,8 +2,9 @@ using Adapter.Interface;
 
 namespace Adapter.Model;
 
-public class Vector<T, D>
+public class Vector<TSelf, T, D>
     where D : IInteger, new()
+    where TSelf : Vector<TSelf, T, D>, new()
 {
     protected T[] data;
 
@@ -24,6 +25,23 @@ public class Vector<T, D>
         {
             data[i] = values[i];
         }
+    }
+
+    public static TSelf Create(params T[] values)
+    {
+        var result = new TSelf();
+        var requiredLength = new D().Value;
+        result.data = new T[requiredLength];
+
+        var providedLength = values.Length;
+        var actLength = Math.Min(requiredLength, providedLength);
+
+        for (int i = 0; i < actLength; i++)
+        {
+            result.data[i] = values[i];
+        }
+
+        return result;
     }
 
     public T this[int index]

@@ -14,8 +14,8 @@ public class LineToPointAdapter : IEnumerable<Point>
         hash = line.GetHashCode();
         if (cache.ContainsKey(hash)) return; // we already have it
 
-        Console.WriteLine($"{++count}: Generating points for line [{line.Start.X},{line.Start.Y}]-[{line.End.X},{line.End.Y}] (with caching)");
-        //                                                 ^^^^
+        Console.WriteLine(
+            $"{++count}: Generating points for line [{line.Start.X},{line.Start.Y}]-[{line.End.X},{line.End.Y}] (with caching)");
 
         List<Point> points = new List<Point>();
 
